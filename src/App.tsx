@@ -19,6 +19,7 @@ const SEARCH_CONFIG = {
   env: import.meta.env.VITE_SEARCH_ENV,
   customerKey: import.meta.env.VITE_SEARCH_CUSTOMER_KEY,
   apiKey: import.meta.env.VITE_SEARCH_API_KEY,
+  // serviceHost: 'https://discover-euc1.sitecorecloud.io',
 };
 
 function App(): JSX.Element {
@@ -32,6 +33,7 @@ function App(): JSX.Element {
               env={SEARCH_CONFIG.env}
               customerKey={SEARCH_CONFIG.customerKey}
               apiKey={SEARCH_CONFIG.apiKey}
+              // serviceHost={SEARCH_CONFIG.serviceHost}
               publicSuffix={true}
             >
               <SEOWidget rfkId={'demo_search_seo'} />

@@ -18,6 +18,8 @@ const withPageTracking =
     const uri = useUri();
     const { id } = useParams();
 
+    console.log('[withPageTracking] id=', uri, id, pageType);
+
     useEffect(() => {
       PageController.getContext().setPageUri(uri);
 

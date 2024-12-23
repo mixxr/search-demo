@@ -6,6 +6,7 @@ import ArticleDetailWidget from '@/widgets/ArticleDetail';
 
 const ArticleDetail = (): JSX.Element => {
   const { id } = useParams();
+  console.log('[ArticleDetail] id=', id);
   return <ArticleDetailWidget key={id} id={id} rfkId="rfkid_7" />;
 };
 

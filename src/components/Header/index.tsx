@@ -5,6 +5,7 @@ import { DarkmodeSwitch } from '@/components/DarkModeSwitcher';
 import LocaleSelector from '@/components/LocaleSelector';
 import Logo from '@/components/Logo';
 import PreviewSearch from '@/widgets/PreviewSearch';
+import Login from '@/components/Login'
 
 const Header = (): JSX.Element => {
   return (
@@ -14,9 +15,10 @@ const Header = (): JSX.Element => {
           <Link to="/" tabIndex={1}>
             <Logo />
           </Link>
-          <PreviewSearch rfkId="rfkid_6" />
+          <PreviewSearch rfkId="rfkid_6_groups" />
           <DarkmodeSwitch />
           <LocaleSelector />
+          <Login />
         </div>
       </div>
     </div>

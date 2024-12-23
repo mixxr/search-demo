@@ -24,7 +24,7 @@ export const ArticleDetailComponent = ({ id }: ArticleDetailProps): JSX.Element 
       itemsPerPage: 1,
     },
   });
-  let mainArticle: ArticleModel = { id: '', title: '' };
+  let mainArticle: ArticleModel = { id: '', title: '', name: '' };
   if (articles.length > 0) {
     mainArticle = articles[0];
   }
@@ -32,12 +32,13 @@ export const ArticleDetailComponent = ({ id }: ArticleDetailProps): JSX.Element 
     <div className="max-w-[1280px] m-auto pt-10" ref={widgetRef}>
       <div className="items-center flex justify-between">
         <div className="max-w-[50%] min-h-[300px] flex items-center flex-col">
+          <h1 className="text-xl font-bold text-gray-700 dark:text-gray-100 w-full">{mainArticle.name}</h1>
           <h1 className="text-xl font-bold text-gray-700 dark:text-gray-100 w-full">{mainArticle.title}</h1>
           <div className="text-left text-md text-gray-700 dark:text-gray-100">{mainArticle?.subtitle}</div>
           <div className="text-left leading-3 text-sm text-gray-700 dark:text-gray-100">{mainArticle?.description}</div>
         </div>
         <div className="max-w-[50%] min-h-[300px] flex items-center">
-          <img className="max-w-[500px]" src={mainArticle.image_url || DEFAULT_IMAGE} />
+          <img className="max-w-[500px]" src={mainArticle.image_url || DEFAULT_IMAGE} alt={mainArticle.name} />
         </div>
       </div>
     </div>
