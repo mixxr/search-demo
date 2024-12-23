@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Spinner from '@/widgets/components/Spinner';
 import SuggestionBlock from '@/widgets/components/SuggestionBlock';
 import type { PreviewSearchInitialState } from '@sitecore-search/react';
-import { WidgetDataType, usePreviewSearch, widget, PageController, ContextUser } from '@sitecore-search/react';
+import { WidgetDataType, usePreviewSearch, widget } from '@sitecore-search/react';
 import { ArticleCard, Presence, PreviewSearch } from '@sitecore-search/ui';
 
 type ArticleModel = {
@@ -42,11 +42,11 @@ export const PreviewSearchComponent = ({ defaultItemsPerPage = 6 }) => {
   const keyphraseHandler = useCallback(
     (event: ChangeEvent<HTMLInputElement>) => {
       const target = event.target;
-      const user: ContextUser = {
-        'user_id': 'micser_001@example.com',
-        'uuid': PageController.getContext().getUser().uuid
-      }
-      PageController.getContext().updateUser(user);
+      // const user: ContextUser = {
+      //   'user_id': 'micser_001@example.com',
+      //   'uuid': PageController.getContext().getUser().uuid
+      // }
+      // PageController.getContext().updateUser(user);
       onKeyphraseChange({ keyphrase: target.value });
     },
     [onKeyphraseChange],
